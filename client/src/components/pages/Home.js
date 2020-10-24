@@ -1,10 +1,17 @@
 import React, { Fragment } from 'react';
+import Contacts from '../contacts/Contacts';
+import ContactForm from '../contacts/ContactForm';
 
 const Home = () => {
 	return (
-		<Fragment>
-			<h1>Home</h1>
-		</Fragment>
+		<div className='grid-2'>
+			<div>
+				<ContactForm />
+			</div>
+			<div>
+				<Contacts />
+			</div>
+		</div>
 	);
 };
 
