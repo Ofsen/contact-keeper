@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // Import CSS
 import './App.css';
@@ -8,12 +8,13 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 // Contexts
 import ContactState from './context/contact/ContactState';
+import AuthState from './context/auth/AuthState';
 
 const App = () => {
 	return (
-		<ContactState>
-			<Router>
-				<Fragment>
+		<AuthState>
+			<ContactState>
+				<Router>
 					<Navbar />
 					<div className='container'>
 						<Switch>
@@ -21,9 +22,9 @@ const App = () => {
 							<Route exact path='/about' component={About} />
 						</Switch>
 					</div>
-				</Fragment>
-			</Router>
-		</ContactState>
+				</Router>
+			</ContactState>
+		</AuthState>
 	);
 };
 
